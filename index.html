@@ -1,0 +1,345 @@
+<style media="screen">
+  .header
+  {
+    width: 100%;
+    
+    
+    height: 68px;
+    color: red;
+    background-color: black;
+    font-size: 100%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    
+    
+  }
+  
+  .box
+  {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(135, 240, 205);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    
+  }
+  .wrapper
+  {
+
+    display: grid;
+    grid-gap: 10px;
+    width:95%;
+    grid-template-columns: 19% 19% 19% 19% 19%;
+    grid-template-rows: 5% 20% 20% 20% 10% 10%;
+    grid-template-areas:
+    "sechp sechc . . ."
+    "sidebar sidebar sidebar article article"
+    "sidebar sidebar sidebar article article"
+    "sidebar sidebar sidebar music music"
+    "sidebar sidebar sidebar music music"
+    "projects projects images images images"
+    "contact contact images images images";
+    
+
+  }
+  .contact
+  {
+    grid-area: contact;
+    border-style: solid;
+    border-width: 2px;
+  }
+  
+  .sechp
+  {
+    grid-area: sechp;
+    margin-top: 20px;
+    
+    height:35px;
+    
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-width: 3px;
+  }
+  .sechc
+  {
+    grid-area: sechc;
+    margin-top: 20px;
+    height:35px;
+    border-style: solid;
+    border-width: 3px;
+    
+    background-color: rgb(255, 255, 255);
+    
+  }
+  .projects
+  {
+    grid-area: projects;
+    border-style: solid;
+    border-width: 2px;
+  }
+  .music
+  {
+    grid-area: music;
+    
+    
+    border-style: solid;
+    border-width: 3px;
+    height: 99%;
+  }
+  .soundcloud
+  {
+    height: 100%;
+  }
+  .images
+  {
+    grid-area: images;
+   border-color: black;
+    border-style:groove;
+    border-width: 10px;
+    height: 88.5%;
+    
+  }
+  .image
+  {
+    grid-area: article;
+    
+  }
+  img
+  {
+    width: 100%;
+    height: 100%;
+    float: left;
+    border-style: solid;
+    border-width: 3px;
+  }
+  .profileImage
+  {
+    margin-left: -100px;
+  }
+  .sidebar
+  {
+    grid-area: sidebar;
+    text-align: left;
+    border-style: solid;
+    border-width: 2px;
+    
+  }
+  .content-sidebar-text
+  {
+    grid-area: sidebar;
+    width:80%;
+    margin-left:10%;
+    padding-top: 5px;
+  }
+  
+  a
+  {
+    
+    font-family: fantasy;
+    margin-left:0%;
+    font-size: 100%;
+    color:black;
+    
+  }
+  
+  .article
+  {
+    grid-area: article;
+    height: 86%;
+    border-style: solid;
+    border-width: 2.5px;
+    margin-left: -2.0px;
+    
+
+  }
+  h1
+  {
+    width:100%;
+    font-size: 96px;
+    font-size-adjust:initial;
+    font-style: italic;
+    margin-left: -1px;
+    
+  }
+  h2
+  {
+    font-family: monospace;
+    margin-top: 0px;
+    
+
+    font-size: 20px;
+    
+  }
+  h3
+  {
+    font-family: monospace;
+    margin-top: 20px;
+    
+    font-size: 16px;
+  }
+  h4
+  {
+    font-size: 20px;
+    font-family: monospace;
+    font-style: italic;
+    margin-bottom: -50px;
+    margin-top: 20px;
+  }
+  body
+  {
+    background-color: darkgrey;
+    font-size: 18px;
+
+  }
+  p
+  {
+    font-family: monospace;
+    
+  }
+  .header-black-cover
+  {
+    width: 100%;
+    
+    margin-top: -68px;
+    height: 68px;
+    color: yellow;
+    background-color: black;
+    font-size: 100%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    z-index: -1;
+    
+  }
+</style>
+<html>
+    </html>
+
+  <head>
+      <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyCyIRWroFT4-u8AKYlEfOGtsfdPobGCIRM",
+          authDomain: "website-90f82.firebaseapp.com",
+          databaseURL: "https://website-90f82.firebaseio.com",
+          projectId: "website-90f82",
+          storageBucket: "website-90f82.appspot.com",
+          messagingSenderId: "578680069283"
+        };
+        
+        var defaultApp = firebase.initializeApp(config);
+
+console.log(defaultApp.name);  // "[DEFAULT]"
+
+// You can retrieve services via the defaultApp variable...
+var defaultStorage = defaultApp.storage();
+var defaultDatabase = defaultApp.database();
+
+// ... or you can use the equivalent shorthand notation
+defaultStorage = firebase.storage();
+defaultDatabase = firebase.database();
+      </script>
+      <!-- Firebase App is always required and must be first -->
+<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-app.js"></script>
+
+<!-- Add additional services that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-functions.js"></script>
+
+<!-- Comment out (or don't include) services that you don't want to use -->
+<!-- <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-storage.js"></script> -->
+
+<script>
+ // Initialize the default app
+
+</script>
+  </head>
+
+<section class="header">
+  <h1>hello Welcome to my site! :D</h1>
+</section>
+
+<body>
+<div class="wrapper">
+  
+  <section class="box sechp">
+     <a href="#projects">
+      Projects
+    </a>
+    </section>
+    <section class="box sechc">
+      <a href="#contact">
+      Contact
+    </a>
+    
+  </section>
+
+    <p class="box sidebar">
+      <section class="content-sidebar-text"> <h4>What is Lorem Ipsum?</h4>
+        <br>
+        <br>
+        <h3>
+          >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </h3>
+        <br>
+        <br>
+        <h4>
+          Where does it come from?
+        </h4>
+        <br>
+        <br>
+        <h3>
+          Contrary to popular belief, Lorem Ipsum is not simply random text. 
+          It has roots in a piece of classical Latin literature from 45 BC, 
+          making it over 2000 years old. Richard McClintock, 
+          a Latin professor at Hampden-Sydney College in Virginia, 
+          looked up one of the more obscure Latin words, consectetur, 
+          from a Lorem Ipsum passage, 
+          and going through the cites of the word in classical literature, 
+          discovered the undoubtable source. 
+          Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" 
+          (The Extremes of Good and Evil) by Cicero, written in 45 BC. 
+          This book is a treatise on the theory of ethics, very popular during the Renaissance. 
+          The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", 
+          comes from a line in section 1.10.32.
+
+          The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. 
+          Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" 
+          by Cicero are also reproduced in their exact original form, 
+          accompanied by English versions from the 1914 translation by H. Rackham.
+        </h3>
+      </section>
+    </p>
+
+
+
+  <p class="box article">
+  <section class="image">
+    
+  <h3>> Here will be some text or whatever</h3>
+  <iframe width="100%"  scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/482349579&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+  <iframe width="100%" height="75px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/282215223&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+  <iframe width="100%" height="75px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/282215223&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+  
+</section>
+  
+
+</p>
+  <p class="box music">
+  <iframe width="100%"  height="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/446181027&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+  </p>
+  <p class="images"><img src="https://i.ytimg.com/vi/1Qt24HC8LO0/maxresdefault.jpg">
+  </p>
+  <p class="box projects" id="projects">Projects
+      <br>
+        <a href="https://github.com/ECUtbildning-WIN18/MenuShellTerminal-faktis">MenuShell at GitHub</a>
+  </p>
+  <p class="box contact" id="contact">Contact information
+    <br>
+    Phone Number: 0760705963
+    <br>
+    Email: ahlgrenedvin@gmail.com
+  </p>
+  
+  </div>
+</body>
