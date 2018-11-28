@@ -13,6 +13,7 @@
     
   }
   
+  
   .box
   {
     width: 100%;
@@ -26,17 +27,20 @@
 
     display: grid;
     grid-gap: 10px;
+    
     width:95%;
-    grid-template-columns: 19% 19% 19% 19% 19%;
-    grid-template-rows: 5% 20% 20% 20% 10% 10%;
+    grid-template-columns: 0.1fr 0.1fr 0.2fr 0.3fr 0.5fr 0.8fr;
+    grid-template-rows: 0.1fr 0.2fr 0.1fr 0.8fr  0.2fr;
     grid-template-areas:
-    "sechp sechc . . ."
-    "sidebar sidebar sidebar article article"
-    "sidebar sidebar sidebar article article"
-    "sidebar sidebar sidebar music music"
-    "sidebar sidebar sidebar music music"
-    "projects projects images images images"
-    "contact contact images images images";
+    "sechp sechc . . . ."
+    
+    
+    
+    "sidebar sidebar sidebar sidebar sidebar sidebar"
+    "projects projects projects contact contact contact "
+    "article article article  article images images"
+    
+    "music music music music music music";
     
 
   }
@@ -52,19 +56,20 @@
     grid-area: sechp;
     margin-top: 20px;
     
-    height:35px;
+    
     
     background-color: rgb(255, 255, 255);
     border-style: solid;
-    border-width: 3px;
+    border-width: 2px;
   }
   .sechc
   {
     grid-area: sechc;
     margin-top: 20px;
-    height:35px;
+    
+    
     border-style: solid;
-    border-width: 3px;
+    border-width: 2px;
     
     background-color: rgb(255, 255, 255);
     
@@ -75,33 +80,41 @@
     border-style: solid;
     border-width: 2px;
   }
-  .music
+  .images
   {
-    grid-area: music;
-    
-    
+    grid-area: images;
+    margin-top:-5%;
+    margin-left: 5%;
+    margin-right:5%;
+    height:100%;
     border-style: solid;
     border-width: 3px;
-    height: 99%;
+    border-radius: 50%;
+    z-index: 1;
+    
   }
   .soundcloud
   {
     height: 100%;
   }
-  .images
+  .music
   {
-    grid-area: images;
+    grid-area: music;
    border-color: black;
-    border-style:groove;
-    border-width: 10px;
+    border-style:solid;
+    border-width: 2px;
     height: 92.5%;
-    position: relative;
+    
     
   }
   .image
   {
     grid-area: article;
-    
+    background-color: black;
+    height:100%;
+    border-style:outset;
+    border-width: 10px;
+    border-radius: 50%;
   }
   img
   {
@@ -110,6 +123,7 @@
     float: left;
     border-style: solid;
     border-width: 3px;
+    border-radius: 50%;
   }
   .profileImage
   {
@@ -119,8 +133,9 @@
   {
     grid-area: sidebar;
     text-align: left;
-    border-style: solid;
+    border-style:solid;
     border-width: 2px;
+    
     
   }
   .content-sidebar-text
@@ -128,7 +143,7 @@
     grid-area: sidebar;
     width:80%;
     margin-left:10%;
-    padding-top: 5px;
+    
   }
   
   a
@@ -144,10 +159,11 @@
   .article
   {
     grid-area: article;
-    height: 86%;
+    
     border-style: solid;
     border-width: 2.5px;
     margin-left: -2.0px;
+    height:87.5%;
     
 
   }
@@ -172,7 +188,7 @@
   h3
   {
     font-family: monospace;
-    margin-top: 20px;
+    
     
     font-size: 16px;
   }
@@ -181,8 +197,8 @@
     font-size: 20px;
     font-family: monospace;
     font-style: italic;
-    margin-bottom: -50px;
-    margin-top: 20px;
+    
+    
   }
   body
   {
@@ -195,19 +211,8 @@
     font-family: monospace;
     
   }
-  .header-black-cover
-  {
-    width: 100%;
-    
-    margin-top: -68px;
-    height: 68px;
-    color: yellow;
-    background-color: black;
-    font-size: 100%;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    z-index: -1;
-    
-  }
+  
+ 
 </style>
 <html>
     </html>
@@ -215,27 +220,9 @@
   <head>
       <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
       <script>
-        // Initialize Firebase
-        var config = {
-          apiKey: "AIzaSyCyIRWroFT4-u8AKYlEfOGtsfdPobGCIRM",
-          authDomain: "website-90f82.firebaseapp.com",
-          databaseURL: "https://website-90f82.firebaseio.com",
-          projectId: "website-90f82",
-          storageBucket: "website-90f82.appspot.com",
-          messagingSenderId: "578680069283"
-        };
         
-        var defaultApp = firebase.initializeApp(config);
-
-console.log(defaultApp.name);  // "[DEFAULT]"
-
-// You can retrieve services via the defaultApp variable...
-var defaultStorage = defaultApp.storage();
-var defaultDatabase = defaultApp.database();
-
-// ... or you can use the equivalent shorthand notation
-defaultStorage = firebase.storage();
-defaultDatabase = firebase.database();
+        // Initialize Firebase
+        
       </script>
       <!-- Firebase App is always required and must be first -->
 <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-app.js"></script>
@@ -250,10 +237,8 @@ defaultDatabase = firebase.database();
 <!-- Comment out (or don't include) services that you don't want to use -->
 <!-- <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-storage.js"></script> -->
 
-<script>
- // Initialize the default app
+<script src="app.js"></script>
 
-</script>
   </head>
 
 <section class="header">
@@ -274,9 +259,10 @@ defaultDatabase = firebase.database();
     </a>
     
   </section>
-
+<
     <p class="box sidebar">
       <section class="content-sidebar-text"> <h4>What is Lorem Ipsum?</h4>
+        
         <br>
         <br>
         <h3>
@@ -315,21 +301,17 @@ defaultDatabase = firebase.database();
 
 
   <p class="box article">
-  <section class="image">
-    
-  <h3>> Here will be some text or whatever</h3>
-  <iframe width="100%"  scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/482349579&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-  <iframe width="100%" height="75px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/282215223&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-  <iframe width="100%" height="75px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/282215223&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
   
-</section>
+    
+      <iframe  width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/622004877%3Fsecret_token%3Ds-wy31B&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+
   
 
 </p>
   <p class="box music">
   <iframe width="100%"  height="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/446181027&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
   </p>
-  <p class="images"><img src="https://i.ytimg.com/vi/1Qt24HC8LO0/maxresdefault.jpg">
+  <p class=" images"><img src="https://i.ytimg.com/vi/1Qt24HC8LO0/maxresdefault.jpg">
   </p>
   <p class="box projects" id="projects">Projects
       <br>
