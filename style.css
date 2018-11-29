@@ -29,8 +29,8 @@
     grid-gap: 10px;
     
     
-    width:100%;
-    grid-template-columns: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
+    
+    grid-template-columns: 5% 5% 30% 30% 5% 5%;
     grid-template-rows: 20px 50% 1000px 1000px 100px  0.2fr;
     
  
@@ -42,21 +42,18 @@
     { 
       display: grid;
     grid-gap: 10px;
-      grid-template-rows: 20px 50% 100px 100px 100px;
-      grid-template-columns: 50px 100px 200px 200px 100px 200px;
+      grid-template-rows: 20px 1400px 100px 100px 100px;
+      grid-template-columns: 5% 5% 30% 30% 5% 5%;
       grid-template-areas:
       ". sechp  sechp sechc sechc ."
-      ". sidebar sidebar sidebar sidebar ."
-      ". contact contact projects projects ."
+      "sidebar sidebar sidebar sidebar sidebar sidebar"
+       ". contact contact projects projects ."
       
-      "images  article article  article article ."
-      ". music music music music music";
+      ".  article article  article article ."
+      ". music music music music ."; 
     }  
-    .images
-    {
-      width: 100px;
-      height:100px;
-    }
+    
+    
   }
   @media (max-width: 1200px)  {
     
@@ -64,8 +61,8 @@
     { 
       display: grid;
     grid-gap: 10px;
-      grid-template-rows: 20px 50% 100px 100px 100px 100px;
-      grid-template-columns: 50px 100px 200px 200px 100px 200px;
+      grid-template-rows: 20px 1400px 100px 100px 100px 100px;
+      grid-template-columns: 5% 5% 30% 30% 5% 5%;
       grid-template-areas:
       ". sechp  sechp sechc sechc ."
       ". sidebar sidebar sidebar sidebar ."
@@ -73,8 +70,7 @@
       ". projects projects contact contact ."
       
       ". article article  article article ."
-      ". music music music music music"
-      "images images images images images .";
+      ". music music music music .";
       
     } 
     p
