@@ -1,5 +1,5 @@
 
-.header
+  .header
   {
     width: 100%;
     
@@ -28,22 +28,40 @@
     display: grid;
     grid-gap: 10px;
     
-    width:95%;
-    grid-template-columns: 0.1fr 0.1fr 0.2fr 0.3fr 0.5fr 0.8fr;
-    grid-template-rows: 0.1fr 0.2fr 0.1fr 0.8fr  0.2fr;
-    grid-template-areas:
-    "sechp sechc . . . ."
     
+    width:100%;
+    grid-template-columns: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
+    grid-template-rows: 20px 0.2fr 0.1fr 0.8fr  0.2fr;
     
-    
-    "sidebar sidebar sidebar sidebar sidebar sidebar"
-    "projects projects projects contact contact contact "
-    "article article article  article images images"
-    
-    "music music music music music music";
-    
-
+ 
   }
+  
+  @media (min-width: 499px)  {
+    
+    .wrapper
+    { grid-template-columns: 10% 10% 10% 10% 10% 10%;
+      grid-template-areas:
+      "sechp sechp  . . sechc sechc"
+      "sidebar sidebar sidebar sidebar sidebar sidebar"
+      "projects projects projects contact contact contact "
+      "article article article  article images images"
+      "music music music music music music";
+    }  
+  }
+
+  @media (max-width: 500px)  {
+    .wrapper
+    {
+      grid-template-columns: 20% 10% 10% 10% 10% 20%;
+      grid-template-areas:
+      "sechp sechc sechc sechc sechc sechc"
+      "sidebar sidebar sidebar sidebar sidebar sidebar"
+      "projects projects projects contact contact contact "
+      "article article article  article images images"
+      "music music music music music music";
+    }  
+  }
+
   .contact
   {
     grid-area: contact;
@@ -211,3 +229,5 @@
     font-family: monospace;
     
   }
+  
+ 
