@@ -126,14 +126,14 @@ section
     grid-gap: 10px;
     font-size: 16px;
     grid-template-columns:      5%          5%          30%         30%         5%          5%;
-    grid-template-rows:         100px        20px      1fr       100px       100px       100px 100px;
+    grid-template-rows:         100px        20px      1fr       200px       170px       100px 100px;
     grid-template-areas:        
                                 "header     header      header      header      header      header"
                                 "sechp      sechp       sechp       sechc       sechc       sechc"
                                 "sidebar    sidebar     sidebar     sidebar     sidebar     sidebar"
                                 "article    article     article     article     article     article"
-                                "contact    contact     contact     projects    projects    projects"
-                                "contact    contact     contact     projects    projects    projects"
+                                "contact    contact     contact     contact     contact     contact"
+                                "projects   projects    projects    projects    projects    projects"
                                 "music      music       music       music       music       music";
     @media screen and (max-width: $break-small) 
     {
@@ -189,7 +189,7 @@ section
         grid-template-areas:
                                 "header     header      header      header      header      header"
                                 "sechp      sechp       sechp       sechc       sechc       sechc"
-                                ".         .     sidebar     sidebar     ."
+                                ".         .     sidebar     sidebar     sidebar"
                                 ".    contact     contact     contact     contact     . "
                                 "projects   projects    projects    projects    projects    projects"
                                 "article    article     article     article     article     article"
