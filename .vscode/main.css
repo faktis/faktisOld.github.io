@@ -1,0 +1,178 @@
+body {
+  background-color: teal; }
+
+section {
+  background: white;
+  color: black;
+  width: 780px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 7px; }
+
+.contact {
+  grid-area: contact;
+  border-style: solid;
+  border-width: 2px;
+  height: 100%;
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  font-size: 40px; }
+
+.sechp {
+  grid-area: sechp;
+  margin-top: -20px;
+  width: 50%;
+  height: 100%;
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  background-color: white;
+  border-style: solid;
+  border-width: 2px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  font-size: 40px; }
+
+.article {
+  grid-area: article;
+  height: 100%;
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-width: 2.5px;
+  margin-left: -2.0px; }
+
+.sechc {
+  grid-area: sechc;
+  margin-top: -20px;
+  height: 100%;
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-width: 2px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  font-size: 40px; }
+
+.projects {
+  grid-area: projects;
+  border-style: solid;
+  border-width: 2px;
+  height: 100%;
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  font-size: 40px; }
+
+.music {
+  grid-area: music;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  height: 92.5%; }
+
+.wrapper {
+  float: right;
+  background-color: aqua;
+  display: grid;
+  grid-gap: 10px;
+  font-size: 16px;
+  grid-template-columns: 5%          5%          30%         30%         5%          5%;
+  grid-template-rows: 100px        20px      1fr       100px       100px       100px 100px;
+  grid-template-areas: "header     header      header      header      header      header" "sechp      sechp       sechp       sechc       sechc       sechc" "sidebar    sidebar     sidebar     sidebar     sidebar     sidebar" "article    article     article     article     article     article" "contact    contact     contact     projects    projects    projects" "contact    contact     contact     projects    projects    projects" "music      music       music       music       music       music"; }
+  @media screen and (max-width: 320px) {
+    .wrapper {
+      float: auto;
+      font-size: 10px;
+      grid-template-columns: 5%          5%          15%         30%         5%          5%;
+      grid-template-rows: 100px        10px       10px        1fr       70px       70px       100px       100px;
+      grid-template-areas: "header     header      header      header      header      header" "sechp      sechp       sechp       sechc       .       ." "sechp      sechp       sechp       sechc       .       ." "sidebar    sidebar     sidebar     sidebar     sidebar     sidebar" "contact    contact     contact     contact     contact     contact " "projects   projects    projects    projects    projects    projects" "article    article     article     article     article     article" "music      music       music       music       music       music"; }
+      .wrapper h1 {
+        font-size: 20px; }
+      .wrapper img {
+        width: 300px; }
+      .wrapper .projects {
+        font-size: 16px; }
+      .wrapper .contact {
+        font-size: 16px; }
+      .wrapper .sechc {
+        font-size: 16px; }
+      .wrapper .sechp {
+        font-size: 16px; } }
+  @media screen and (min-width: 1200px) {
+    .wrapper {
+      float: auto;
+      grid-template-columns: 5%          5%          30%         30%         5%          5%;
+      grid-template-rows: 100px        20px      1fr       500px       100px       100px      100px;
+      grid-template-areas: "header     header      header      header      header      header" "sechp      sechp       sechp       sechc       sechc       sechc" ".         .     sidebar     sidebar     ." ".    contact     contact     contact     contact     . " "projects   projects    projects    projects    projects    projects" "article    article     article     article     article     article" "music      music       music       music       music       music"; } }
+
+.sidebar {
+  grid-area: sidebar;
+  text-align: center;
+  border-style: solid;
+  border-width: 2px;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 100%;
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  background-color: black;
+  color: white; }
+
+.content-sidebar-text {
+  grid-area: sidebar;
+  width: 80%;
+  margin: 5%; }
+
+.header {
+  grid-area: header;
+  height: 100%;
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  background-color: black;
+  color: white; }
+
+.thumb1 {
+  height: 120px;
+  width: 120px;
+  -webkit-border-radius: 10%;
+  -moz-border-radius: 10%;
+  -ms-border-radius: 10%;
+  border-radius: 10%;
+  background-color: black;
+  color: white; }

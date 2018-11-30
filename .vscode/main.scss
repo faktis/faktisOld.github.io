@@ -1,0 +1,232 @@
+//variables
+$brand-main:        teal;
+$brand-sub:         white;
+$brand-dark:        black;
+$brand-light:       white;
+
+$break-small:       320px;
+$break-large:       1200px;   
+
+$btn-contact-width: 100%;
+$btn-contact-height: 100%;
+
+
+
+
+
+//mixins
+
+@mixin shaping($height, $width, $rad, $bg, $color)
+{
+     height:                $height;
+     width:                 $width;
+     -webkit-border-radius: $rad;
+     -moz-border-radius:    $rad;
+     -ms-border-radius:     $rad;
+     border-radius:         $rad;
+     background-color:      $bg;
+     color:                 $color;
+}
+
+//styles
+body
+{
+    background-color:  $brand-main;
+}
+
+section
+{
+    background: $brand-sub;
+    color: $brand-dark;
+    width: 780px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 7px;
+}
+
+.contact
+  {
+    grid-area: contact;
+    border-style: solid;
+    border-width: 2px;
+    
+    @include shaping(100%,$btn-contact-width , 10px, $brand-light, $brand-dark);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-size: 40px;
+  }
+  
+  .sechp
+  {
+    grid-area: sechp;
+    
+    
+    margin-top: -20px;
+    width: 50%;
+    @include shaping($btn-contact-height,$btn-contact-width , 10px, $brand-light, $brand-dark);
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-width: 2px;
+  
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-size: 40px;
+  }
+  .article
+  {
+    grid-area: article;
+    @include shaping($btn-contact-height,$btn-contact-width , 10px, $brand-light, $brand-dark);
+    border-style: solid;
+    border-width: 2.5px;
+    margin-left: -2.0px;
+    
+    
+
+  }
+  .sechc
+  {
+    grid-area: sechc;
+    margin-top: -20px;
+    
+    @include shaping($btn-contact-height,$btn-contact-width , 10px, $brand-light, $brand-dark);
+    border-style: solid;
+    border-width: 2px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-size: 40px;
+    
+    
+  }
+  .projects
+  {
+    grid-area: projects;
+    border-style: solid;
+    border-width: 2px;
+    @include shaping($btn-contact-height,$btn-contact-width , 10px, $brand-light, $brand-dark);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-size: 40px;
+  }
+  .music
+  {
+    grid-area: music;
+   border-color: black;
+    border-style:solid;
+    border-width: 2px;
+    height: 92.5%;
+    
+    
+  }
+.wrapper 
+{
+    float: right;
+
+    background-color: aqua;
+    display: grid;
+    grid-gap: 10px;
+    font-size: 16px;
+    grid-template-columns:      5%          5%          30%         30%         5%          5%;
+    grid-template-rows:         100px        20px      1fr       100px       100px       100px 100px;
+    grid-template-areas:        
+                                "header     header      header      header      header      header"
+                                "sechp      sechp       sechp       sechc       sechc       sechc"
+                                "sidebar    sidebar     sidebar     sidebar     sidebar     sidebar"
+                                "article    article     article     article     article     article"
+                                "contact    contact     contact     projects    projects    projects"
+                                "contact    contact     contact     projects    projects    projects"
+                                "music      music       music       music       music       music";
+    @media screen and (max-width: $break-small) 
+    {
+        
+        float: auto;
+        
+        font-size: 10px;
+        grid-template-columns:  5%          5%          15%         30%         5%          5%;
+        grid-template-rows:     100px        10px       10px        1fr       70px       70px       100px       100px;
+        grid-template-areas:
+                                "header     header      header      header      header      header"
+                                "sechp      sechp       sechp       sechc       .       ."
+                                "sechp      sechp       sechp       sechc       .       ."
+                                "sidebar    sidebar     sidebar     sidebar     sidebar     sidebar"
+                                "contact    contact     contact     contact     contact     contact "
+                                "projects   projects    projects    projects    projects    projects"
+                                "article    article     article     article     article     article"
+                                "music      music       music       music       music       music";
+          
+        h1
+        {
+            font-size:20px; 
+        }
+        img
+        {
+            width: 300px;
+        }
+        .projects
+        {
+            font-size: 16px;
+        }
+        .contact
+        {
+            font-size: 16px;
+        }
+        .sechc
+        {
+            font-size: 16px;
+        }
+        .sechp
+        {
+            font-size: 16px;
+        }
+    }
+    @media screen and (min-width: $break-large) 
+    {
+        float: auto;
+        
+        
+        
+        grid-template-columns:  5%          5%          30%         30%         5%          5%;
+        grid-template-rows:     100px        20px      1fr       500px       100px       100px      100px;
+        grid-template-areas:
+                                "header     header      header      header      header      header"
+                                "sechp      sechp       sechp       sechc       sechc       sechc"
+                                ".         .     sidebar     sidebar     ."
+                                ".    contact     contact     contact     contact     . "
+                                "projects   projects    projects    projects    projects    projects"
+                                "article    article     article     article     article     article"
+                                "music      music       music       music       music       music";
+    }
+}
+
+
+.sidebar
+  {
+    grid-area: sidebar;
+    text-align: center;
+    border-style:solid;
+    border-width: 2px;
+    
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include shaping($btn-contact-height,$btn-contact-width, 10px,$brand-dark, $brand-light);
+      
+  }
+  .content-sidebar-text
+  {
+    grid-area: sidebar;
+    width:80%;
+    margin:5%;
+    
+  }
+.header
+{
+    grid-area: header;
+    @include shaping($btn-contact-height,$btn-contact-width, 10px,$brand-dark, $brand-light);
+   
+}
+
+.thumb1
+{
+    @include shaping(120px,120px, 10%,$brand-dark, $brand-light);
+} 
