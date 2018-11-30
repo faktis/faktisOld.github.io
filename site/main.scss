@@ -113,7 +113,7 @@ section
    border-color: black;
     border-style:solid;
     border-width: 2px;
-    height: 92.5%;
+    margin-top: 50px;
     
     
   }
@@ -121,15 +121,15 @@ section
 {
     float: right;
 
-    background-color: aqua;
+    background-color: rgb(24, 27, 27);
     display: grid;
     grid-gap: 10px;
     font-size: 16px;
     grid-template-columns:      5%          5%          30%         30%         5%          5%;
-    grid-template-rows:         100px        20px      1fr       200px       170px       100px 100px;
+    grid-template-rows:         100px        20px      1fr       200px       170px       100px 200px;
     grid-template-areas:        
                                 "header     header      header      header      header      header"
-                                "sechp      sechp       sechp       sechc       sechc       sechc"
+                                ".      sechp       sechp       sechc       sechc       ."
                                 "sidebar    sidebar     sidebar     sidebar     sidebar     sidebar"
                                 "article    article     article     article     article     article"
                                 "contact    contact     contact     contact     contact     contact"
