@@ -105,7 +105,7 @@ section {
   grid-gap: 10px;
   font-size: 16px;
   grid-template-columns: 5%          25%          10%         5%         5%          45%;
-  grid-template-rows: 100px        20px      1fr       200px       70px       100px 200px;
+  grid-template-rows: 100px        20px      1fr       200px       auto       auto 200px;
   grid-template-areas: "header     header      header      header      header      header" ".      sechp       sechp  .             sechc       sechc" "sidebar    sidebar     sidebar     sidebar     sidebar     sidebar" "article    article     article     article     article     article" "contact    contact     contact     contact     contact     contact" "projects   projects    projects    projects    projects    projects" "music      music       music       music       music       music"; }
   @media screen and (max-width: 320px) {
     .wrapper {
@@ -154,10 +154,16 @@ img {
   width: 300px; }
 
 .projects {
-  font-size: 16px; }
+  font-size: auto; }
+  @media screen and (min-width: 1200px) {
+    .projects {
+      font-size: 24px; } }
+  @media screen and (max-width: 320px) {
+    .projects {
+      font-size: 16px; } }
 
 .contact {
-  font-size: 20px; }
+  font-size: auto; }
   @media screen and (min-width: 1200px) {
     .contact {
       font-size: 24px; } }

@@ -126,7 +126,7 @@ section
     grid-gap: 10px;
     font-size: 16px;
     grid-template-columns:      5%          25%          10%         5%         5%          45%;
-    grid-template-rows:         100px        20px      1fr       200px       70px       100px 200px;
+    grid-template-rows:         100px        20px      1fr       200px       auto       auto 200px;
     grid-template-areas:        
                                 "header     header      header      header      header      header"
                                 ".      sechp       sechp  .             sechc       sechc"
@@ -220,15 +220,19 @@ img
 }
 .projects
 {
-    font-size: 16px;
+    font-size:auto; 
     @media screen and (min-width: $break-large) 
     {
-
+        font-size:24px; 
+    }
+    @media screen and (max-width: $break-small) 
+    {
+        font-size:16px; 
     }
 }
 .contact
 {
-    font-size:20px; 
+    font-size:auto; 
     @media screen and (min-width: $break-large) 
     {
         font-size:24px; 
