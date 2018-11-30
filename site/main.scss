@@ -125,7 +125,7 @@ section
     display: grid;
     grid-gap: 10px;
     font-size: 16px;
-    grid-template-columns:      5%          25%          10%         5%         5%          25%;
+    grid-template-columns:      5%          25%          10%         5%         5%          45%;
     grid-template-rows:         100px        20px      1fr       200px       70px       100px 200px;
     grid-template-areas:        
                                 "header     header      header      header      header      header"
@@ -161,7 +161,7 @@ section
         
         
         
-        grid-template-columns:  5%          5%          30%         5%         15%          35%;
+        grid-template-columns:  5%          5%          30%         5%         15%          5%;
         grid-template-rows:     100px        20px      1fr       500px       100px       100px      100px;
         grid-template-areas:
                                 "header     header      header      header      header      header"
@@ -176,7 +176,7 @@ section
 
 h1
 {
-    font-size:20px; 
+    font-size:24px; 
     @media screen and (min-width: $break-large) 
     {
         font-size:36px; 
