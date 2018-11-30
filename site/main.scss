@@ -1,5 +1,5 @@
 //variables
-$brand-main:        teal;
+$brand-main:        rgb(24, 27, 27);
 $brand-sub:         white;
 $brand-dark:        black;
 $brand-light:       white;
@@ -125,11 +125,11 @@ section
     display: grid;
     grid-gap: 10px;
     font-size: 16px;
-    grid-template-columns:      5%          25%          10%         5%         5%          45%;
+    grid-template-columns:      5%          25%          15%         15%         25%          5%;
     grid-template-rows:         100px        20px      1fr       200px       auto       auto 200px;
     grid-template-areas:        
                                 "header     header      header      header      header      header"
-                                ".      sechp       sechp  .             sechc       sechc"
+                                "sechp      sechp       .           .           sechc       sechc"
                                 "sidebar    sidebar     sidebar     sidebar     sidebar     sidebar"
                                 "article    article     article     article     article     article"
                                 "contact    contact     contact     contact     contact     contact"
@@ -176,10 +176,12 @@ section
 
 h1
 {
-    font-size:24px; 
+    margin-top: 10px;
+    font-size:58px; 
     @media screen and (min-width: $break-large) 
     {
-        font-size:36px; 
+        font-size:76px; 
+        margin-top: -10px;
     }
     @media screen and (max-width: $break-small) 
     {
@@ -282,7 +284,8 @@ img
 .header
 {
     grid-area: header;
-    @include shaping($btn-contact-height,$btn-contact-width, 10%,$brand-dark, $brand-light);
+    background-color:  rgb(24, 27, 27);
+    @include shaping($btn-contact-height,$btn-contact-width, 10%,$brand-main, $brand-light);
    
 }
 
