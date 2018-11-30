@@ -125,11 +125,11 @@ section
     display: grid;
     grid-gap: 10px;
     font-size: 16px;
-    grid-template-columns:      5%          5%          30%         30%         5%          5%;
-    grid-template-rows:         100px        20px      1fr       200px       170px       100px 200px;
+    grid-template-columns:      5%          25%          10%         5%         5%          5%;
+    grid-template-rows:         100px        20px      1fr       200px       70px       100px 200px;
     grid-template-areas:        
                                 "header     header      header      header      header      header"
-                                ".      sechp       sechp       sechc       sechc       ."
+                                ".      sechp       sechp  .             sechc       sechc"
                                 "sidebar    sidebar     sidebar     sidebar     sidebar     sidebar"
                                 "article    article     article     article     article     article"
                                 "contact    contact     contact     contact     contact     contact"
@@ -137,67 +137,123 @@ section
                                 "music      music       music       music       music       music";
     @media screen and (max-width: $break-small) 
     {
-        
+       
         float: auto;
-        
+        text-align: left;
         font-size: 10px;
-        grid-template-columns:  5%          5%          15%         30%         5%          5%;
-        grid-template-rows:     100px        10px       10px        1fr       70px       70px       100px       100px;
+        grid-template-columns:  5%          5%          15%         15%         25%          5%;
+        grid-template-rows:     100px        10px       10px        1fr       70px       70px       70px       200px;
         grid-template-areas:
                                 "header     header      header      header      header      header"
-                                "sechp      sechp       sechp       sechc       .       ."
-                                "sechp      sechp       sechp       sechc       .       ."
+                                "sechp      sechp       .       sechc       sechc       ."
+                                "sechp      sechp       .       sechc       sechc       ."
                                 "sidebar    sidebar     sidebar     sidebar     sidebar     sidebar"
                                 "contact    contact     contact     contact     contact     contact "
                                 "projects   projects    projects    projects    projects    projects"
                                 "article    article     article     article     article     article"
                                 "music      music       music       music       music       music";
-          
-        h1
-        {
-            font-size:20px; 
         }
-        img
-        {
-            width: 300px;
-        }
-        .projects
-        {
-            font-size: 16px;
-        }
-        .contact
-        {
-            font-size: 16px;
-        }
-        .sechc
-        {
-            font-size: 16px;
-        }
-        .sechp
-        {
-            font-size: 16px;
-        }
-    }
+        
+    
     @media screen and (min-width: $break-large) 
     {
         float: auto;
         
         
         
-        grid-template-columns:  5%          5%          30%         30%         5%          5%;
+        grid-template-columns:  5%          5%          30%         5%         15%          5%;
         grid-template-rows:     100px        20px      1fr       500px       100px       100px      100px;
         grid-template-areas:
                                 "header     header      header      header      header      header"
                                 "sechp      sechp       sechp       sechc       sechc       sechc"
-                                ".         .     sidebar     sidebar     sidebar"
-                                ".    contact     contact     contact     contact     . "
+                                "sidebar         sidebar     sidebar     sidebar     sidebar"
+                                "contact    contact     contact     contact     contact     contact "
                                 "projects   projects    projects    projects    projects    projects"
                                 "article    article     article     article     article     article"
                                 "music      music       music       music       music       music";
     }
 }
 
+h1
+{
+    font-size:20px; 
+    @media screen and (min-width: $break-large) 
+    {
+        font-size:36px; 
+    }
+    @media screen and (max-width: $break-small) 
+    {
+        font-size:16px; 
+    }
+}
+h2
+{
+    font-size:20px; 
+    text-align: center;
+    @media screen and (min-width: $break-large) 
+    {
+        font-size:20px; 
+    }
+    @media screen and (max-width: $break-small) 
+    {
+        font-size:50px; 
+    }
+}
+a{
+    font-size: 20px;
+    @media screen and (min-width: $break-large) 
+    {
+        font-size:40px; 
+    }
+    @media screen and (max-width: $break-small) 
+    {
+        font-size:14px; 
+    }
+}
+img
+{
+    width: 300px;
+    @media screen and (min-width: $break-large) 
+    {
 
+    }
+}
+.projects
+{
+    font-size: 16px;
+    @media screen and (min-width: $break-large) 
+    {
+
+    }
+}
+.contact
+{
+    font-size:20px; 
+    @media screen and (min-width: $break-large) 
+    {
+        font-size:24px; 
+    }
+    @media screen and (max-width: $break-small) 
+    {
+        font-size:16px; 
+    }
+}
+.sechc
+{
+    font-size: 16px;
+    @media screen and (min-width: $break-large) 
+    {
+
+    }
+}
+.sechp
+{
+    font-size: 16px;
+    @media screen and (min-width: $break-large) 
+    {
+
+    }
+}
 .sidebar
   {
     grid-area: sidebar;
@@ -222,11 +278,11 @@ section
 .header
 {
     grid-area: header;
-    @include shaping($btn-contact-height,$btn-contact-width, 10px,$brand-dark, $brand-light);
+    @include shaping($btn-contact-height,$btn-contact-width, 10%,$brand-dark, $brand-light);
    
 }
 
 .thumb1
 {
-    @include shaping(120px,120px, 10%,$brand-dark, $brand-light);
+    @include shaping(120px,120px, 10px,$brand-dark, $brand-light);
 } 
