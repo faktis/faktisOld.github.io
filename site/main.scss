@@ -165,7 +165,7 @@ section
 .sidebar
   {
     
-    @include grid-area(sidebar, monospace, 20px);
+    @include grid-area(sidebar, monospace, auto);
     max-width: 100%;
     white-space: nowrap;
     overflow: hidden;

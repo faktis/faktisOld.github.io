@@ -121,7 +121,7 @@ section {
 .sidebar {
   grid-area: sidebar;
   font-family: monospace;
-  font-size: 20px;
+  font-size: auto;
   border-radius: 7px;
   border-color: white;
   border-width: 2px;
