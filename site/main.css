@@ -212,7 +212,7 @@ h1 {
 
 .header {
   grid-area: header;
-  margin-left: -200px;
+  text-align: left;
   background-color: #181b1b;
   height: 100%;
   width: 100%;

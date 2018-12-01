@@ -240,7 +240,7 @@ h1
 .header
 {
     grid-area: header;
-    margin-left:-200px;
+    text-align: left;
     background-color:  rgb(24, 27, 27);
     @include shaping($btn-contact-height,$btn-contact-width, 10%,$brand-main, $brand-light);
    
