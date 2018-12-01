@@ -27,6 +27,15 @@ $btn-contact-height:100%;
      background-color:      $bg;
      color:                 $color;
 }
+@mixin grid-area($name, $font-family, $font-size)
+{
+    grid-area:              $name;
+    font-family:            $font-family;
+    font-size:              $font-size;
+    border-radius: 7px;
+    
+}
+
 
 //styles
 body
@@ -40,8 +49,11 @@ section
     color: $brand-dark;
     width: 780px;
     margin: auto;
-    padding: 20px;
-    border-radius: 7px;
+    padding-right:20px;
+    padding-bottom: 15px;
+    text-align: center;
+    border-color:           $brand-dark;
+    
 }
 
 
@@ -51,10 +63,7 @@ section
   
   .music
   {
-    grid-area: music;
-   border-color: black;
-    border-style:solid;
-    border-width: 2px;
+    @include grid-area(music, monospace, 20px);
     margin-top: 50px;
     
     
@@ -117,9 +126,7 @@ section
 }
 .contact
 {
-    grid-area: contact;
-    border-style: solid;
-    border-width: 2px;
+    @include grid-area(contact, monospace, 20px);
     padding-top: -20px;
     padding-bottom: -20px;
     margin:auto;
@@ -131,10 +138,7 @@ section
 }
 .projects
 {
-    grid-area: projects;
-    border-style: solid;
-    border-width: 2px;
-    padding-top: -20px;
+    @include grid-area(projects, monospace, 20px);
     padding-bottom: -20px;
     margin:auto;
     @include shaping(70px,$btn-contact-width , 10px, $brand-light, $brand-dark);
@@ -144,26 +148,21 @@ section
 }
 .projects a
 {
-    font-size: 20px;
-    grid-area: projects;
+    @include grid-area(projects, arial , 20px);
 }
 
 .article
   {
-    grid-area: article;
+    @include grid-area(article, monospace, 20px);
     @include shaping($btn-contact-height,$btn-contact-width , 10px, $brand-light, $brand-dark);
-    border-style: solid;
-    border-width: 2.5px;
+    
     margin-left: -2.0px;
     margin:auto;
   }
 .sidebar
   {
-    grid-area: sidebar;
-    text-align: center;
-    border-style:solid;
-    border-width: 2px;
     
+    @include grid-area(sidebar, monospace, 20px);
     max-width: 100%;
     white-space: nowrap;
     overflow: hidden;
@@ -173,18 +172,11 @@ section
   }
 .sechc
 {
+    @include grid-area(sechc, monospace, 20px);
+    
    
-    grid-area: sechc;
-    
-    
-    margin-top: -20px;
-    width: 50%;
     @include shaping($btn-contact-height,$btn-contact-width , 10px, $brand-light, $brand-dark);
     background-color: rgb(255, 255, 255);
-    border-style: solid;
-    border-width: 2px;
-    
-    font-family: monospace;
     text-align: center;
     font-size: 40px;
     @media screen and (min-width: $break-large) 
@@ -194,30 +186,25 @@ section
 }
 .sechp
 {
+
     
-    grid-area: sechp;
+    @include grid-area(sechp, monospace, 20px);
     
     
-    margin-top: -20px;
-    width: 50%;
     @include shaping($btn-contact-height,$btn-contact-width , 10px, $brand-light, $brand-dark);
     background-color: rgb(255, 255, 255);
-    border-style: solid;
-    border-width: 2px;
-    
-    font-family: monospace;
-    text-align: center;
-    font-size: 40px;
-    @media screen and (min-width: $break-large) 
-    {
-
-    }
+    text-align: center; 
 }
 
+.sechp 
 a
 {
-    font-size: 36px;
-    
+    font-size: 32px;  
+}
+.sechc 
+a
+{
+    font-size: 32px;  
 }
 
 h1
@@ -235,28 +222,22 @@ h1
     }
 }
 
-img
-{
-    width: 300px;
-    @media screen and (min-width: $break-large) 
-    {
-
-    }
-}
 
 
 
 
   .content-sidebar-text
   {
-    grid-area: sidebar;
+    @include grid-area(sidebar, times, 14px);
+    text-align: left;
     width:80%;
     margin:5%;
-    
+    padding-left: 10px;
   }
 .header
 {
-    grid-area: header;
+    @include grid-area(header, monospace, 50px);
+    margin-left:-100px;
     background-color:  rgb(24, 27, 27);
     @include shaping($btn-contact-height,$btn-contact-width, 10%,$brand-main, $brand-light);
    
