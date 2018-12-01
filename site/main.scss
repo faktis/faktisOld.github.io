@@ -83,7 +83,7 @@ section
     grid-template-rows:         100px        20px      1fr       200px       auto       auto 200px;
     grid-template-areas:        
                                 "header     header      header      header      header      header"
-                                "sechp      sechp       .           .           sechc       sechc"
+                                "sechp      sechp       .           .           sechc       ."
                                 "sidebar    sidebar     sidebar     sidebar     sidebar     sidebar"
                                 "article    article     article     article     article     article"
                                 "contact    contact     contact     contact     contact     contact"
@@ -231,7 +231,7 @@ h1
 
   .content-sidebar-text
   {
-    @include grid-area(sidebar, times, 14px);
+    @include grid-area(sidebar, times, auto);
     text-align: left;
     width:80%;
     margin:5%;

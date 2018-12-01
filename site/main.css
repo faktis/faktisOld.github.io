@@ -29,7 +29,7 @@ section {
   font-size: 16px;
   grid-template-columns: 5%          25%          15%         15%         25%          5%;
   grid-template-rows: 100px        20px      1fr       200px       auto       auto 200px;
-  grid-template-areas: "header     header      header      header      header      header" "sechp      sechp       .           .           sechc       sechc" "sidebar    sidebar     sidebar     sidebar     sidebar     sidebar" "article    article     article     article     article     article" "contact    contact     contact     contact     contact     contact" "projects   projects    projects    projects    projects    projects" "music      music       music       music       music       music"; }
+  grid-template-areas: "header     header      header      header      header      header" "sechp      sechp       .           .           sechc       ." "sidebar    sidebar     sidebar     sidebar     sidebar     sidebar" "article    article     article     article     article     article" "contact    contact     contact     contact     contact     contact" "projects   projects    projects    projects    projects    projects" "music      music       music       music       music       music"; }
   @media screen and (max-width: 320px) {
     .wrapper {
       float: auto;
@@ -200,7 +200,7 @@ h1 {
 .content-sidebar-text {
   grid-area: sidebar;
   font-family: times;
-  font-size: 14px;
+  font-size: auto;
   border-radius: 7px;
   border-color: white;
   border-width: 2px;
