@@ -33,6 +33,9 @@ $btn-contact-height:100%;
     font-family:            $font-family;
     font-size:              $font-size;
     border-radius: 7px;
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
     
 }
 
@@ -236,8 +239,8 @@ h1
   }
 .header
 {
-    @include grid-area(header, monospace, 50px);
-    margin-left:-100px;
+    grid-area: header;
+    margin-left:-200px;
     background-color:  rgb(24, 27, 27);
     @include shaping($btn-contact-height,$btn-contact-width, 10%,$brand-main, $brand-light);
    
