@@ -1,110 +1,78 @@
-
-<html>
-    
-
-  <head>
-      <link rel="stylesheet" href="site/main.css">
-      <!-- Firebase App is always required and must be first -->
-<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-app.js"></script>
-
-<!-- Add additional services that you want to use -->
-<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-database.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-messaging.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-functions.js"></script>
-
-<!-- Comment out (or don't include) services that you don't want to use -->
-<!-- <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-storage.js"></script> -->
-
-<script src="app.js"></script>
-
-  </head>
-
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>clone of Audio | made with cables</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <style>
+        body { 
+            /* height: 500px;
+            width: 500px; */
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        canvas {
+            display: block;
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            box-sizing: border-box;
+            width: 100vw;
+            padding: 20px;
+            text-align: right;
+            font-size: 18px;
+            color: #24baa7;
+        }
+        footer a, footer a:hover, footer a:active {
+            color: #24baa7;
+        }
+    </style>
+</head>
 <body>
-<div class="wrapper">
-  <section class="header">
-    <h1>hello Welcome to my site! :D</h1>
-  </section>
-  <section class="box sechp">
-     <a href="#projects">
-      Projects
-    </a>
-    </section>
-    <section class="box sechc">
-      <a href="#contact">
-      Contact
-    </a>
+    <canvas id="glcanvas" width="300px" height="300px"></canvas>
+    <footer>
+        made with <a href="https://cables.gl">cables</a>
+        <!-- we would greatly appreciate if you link cables somewhere on your site! and tell us your website! thanks <3 :) -->
+    </footer>
+
+    <libs/>
+    <script type="text/javascript" src="js/patch.js"></script>
+     
     
-  </section>
+    <script>
+        /**
+         * Called when there was a cables error.
+         * @param {string} errId - ID of the error, e.g. 'NO_WEBGL' or 'NO_WEBAUDIO' 
+         *                         when the browser does not support the used APIs
+         * @param {string} errMsg - The error message
+         */
+        function showError(errId, errMsg) {
+            alert('An error occured: ' + errId + ', ' + errMsg);
+        }
 
-    <p class="box sidebar">
-      <section class="content-sidebar-text"> <h4>What is Lorem Ipsum?</h4>
-        
-        <br>
-        <br>
-        <h3>
-          >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </h3>
-        <br>
-        <br>
-        <h4>
-          Where does it come from?
-        </h4>
-        <br>
-        <br>
-        <h3>
-          Contrary to popular belief, Lorem Ipsum is not simply random text. 
-          It has roots in a piece of classical Latin literature from 45 BC, 
-          making it over 2000 years old. Richard McClintock, 
-          a Latin professor at Hampden-Sydney College in Virginia, 
-          looked up one of the more obscure Latin words, consectetur, 
-          from a Lorem Ipsum passage, 
-          and going through the cites of the word in classical literature, 
-          discovered the undoubtable source. 
-          Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" 
-          (The Extremes of Good and Evil) by Cicero, written in 45 BC. 
-          This book is a treatise on the theory of ethics, very popular during the Renaissance. 
-          The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", 
-          comes from a line in section 1.10.32.
+        function patchInitialized() {
+            // You can now access the patch object (CABLES.patch), register variable watchers and so on
+        }
 
-          The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. 
-          Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" 
-          by Cicero are also reproduced in their exact original form, 
-          accompanied by English versions from the 1914 translation by H. Rackham.</h3>
-  
-        </section>
-        <p class="box article">
-  
-    
-          <iframe  width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/622004877%3Fsecret_token%3Ds-wy31B&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-    
-      
-    
-    </p>
-      </p>
+        function patchFinishedLoading() {
+            // The patch is ready now, all assets have been loaded
+        }
 
-
-
-  
-  <p class="box music">
-  <iframe width="100%"  height="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/446181027&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-  </p>
-  <!--<p class="images"><img src="https://i.ytimg.com/vi/1Qt24HC8LO0/maxresdefault.jpg">
-  </p>-->
-  <p class="box projects" id="projects">Projects
-      <br>
-        <a href="https://github.com/ECUtbildning-WIN18/MenuShellTerminal-faktis">MenuShell at GitHub</a>
-  </p>
-  <p class="box contact" id="contact">Contact information
-    <br>
-    Phone Number: 0760705963
-    <br>
-    Email: ahlgrenedvin@gmail.com
-  </p>
-  
-  </div>
+        document.addEventListener('DOMContentLoaded', function(event) {
+            CABLES.patch = new CABLES.Patch({
+                patch: CABLES.exportedPatch,
+                prefixAssetPath: '',
+                glCanvasId: 'glcanvas',
+                glCanvasResizeToWindow: true,
+                onError: showError,
+                onPatchLoaded: patchInitialized,
+                onFinishedLoading: patchFinishedLoading,
+            });
+        });
+    </script>
 </body>
 </html>
